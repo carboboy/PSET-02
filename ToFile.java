@@ -8,9 +8,8 @@ import java.io.UnsupportedEncodingException;
 public class ToFile implements OptionStrategy {
 
     private PrintWriter write;
-    private int blockCounter = 2;
 
-    public void typeExecution(int value) {
+    public void typeExecution(StringBuilder sb) {
         try {
             write = new PrintWriter("mario.txt","UTF-8");
         } catch (FileNotFoundException e) {
@@ -18,19 +17,8 @@ public class ToFile implements OptionStrategy {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+        write.print(sb);
 
-        for (int i = 0; i < value; i++) {
-
-            for (int j = value; j > blockCounter-1; j--) {
-                write.print(" ");
-            }
-
-            for (int k = 0; k < blockCounter; k++) {
-                write.print("#");
-            }
-            blockCounter++;
-            write.println();
-        }
         write.close();
     }
 }
