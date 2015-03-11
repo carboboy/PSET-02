@@ -1,5 +1,6 @@
 /**
- * Created by carbo_000 on 3/10/2015.
+ * Created by carbo_000, Ryan Modica, on 3/10/2015.
+ * Second PSet of Mario.java. It uses the concept of the Strategy Pattern Design
  */
 
 import java.util.Scanner;
