@@ -11,6 +11,22 @@ public class OutputContext {
     }
 
     public void typeExecution(int value) {
-        strategy.typeExecution(value);
+
+        StringBuilder sb = new StringBuilder(value * value);
+        int blockCounter = 2;
+
+        for(int i = 0; i < value; i++) {
+
+            for(int j = value; j > blockCounter-1; j--) {
+                sb.append(" ");
+            }
+
+            for(int k = 0;  k < blockCounter; k++) {
+                sb.append("#");
+            }
+            blockCounter++;
+            sb.append("\n");
+        }
+        strategy.typeExecution(sb);
     }
 }
